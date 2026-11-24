@@ -1,0 +1,50 @@
+{
+  // Prerequis : variable d'environnement CATALINA_HOME = dossier d'installation de Tomcat
+  // (celui qui contient bin/, webapps/, conf/), et JAVA_HOME = JDK 17+.
+  // Chemins SANS espaces de preference (ex: C:\tomcat\apache-tomcat-10.1.x).
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "maven: package",
+      "type": "shell",
+      "command": "mvn -q -B package",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "tomcat: deploy (copy lab1.war)",
+      "type": "shell",
+      "dependsOn": "maven: package",
+      "command": "cp target/lab1.war \"$CATALINA_HOME/webapps/\"",
+      "windows": { "command": "copy /Y target\\lab1.war \"%CATALINA_HOME%\\webapps\\\"" },
+      "problemMatcher": []
+    },
+    {
+      "label": "tomcat: start (console)",
+      "type": "shell",
+      "dependsOn": "tomcat: deploy (copy lab1.war)",
+      "command": "\"$CATALINA_HOME/bin/catalina.sh\" run",
+      "windows": { "command": "\"%CATALINA_HOME%\\bin\\catalina.bat\" run" },
+      "isBackground": true,
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "problemMatcher": []
+    },
+    {
+      "label": "tomcat: start in DEBUG (port 8000)",
+      "type": "shell",
+      "dependsOn": "tomcat: deploy (copy lab1.war)",
+      "command": "\"$CATALINA_HOME/bin/catalina.sh\" jpda run",
+      "windows": { "command": "\"%CATALINA_HOME%\\bin\\catalina.bat\" jpda run" },
+      "isBackground": true,
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "problemMatcher": []
+    },
+    {
+      "label": "tomcat: stop",
+      "type": "shell",
+      "command": "\"$CATALINA_HOME/bin/catalina.sh\" stop",
+      "windows": { "command": "\"%CATALINA_HOME%\\bin\\catalina.bat\" stop" },
+      "problemMatcher": []
+    }
+  ]
+}

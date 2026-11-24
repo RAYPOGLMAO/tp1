@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>Form</title></head>
+<body>
+<h1>Person form (TP 1.1 / 1.2)</h1>
+<form method="post" action="FormServlet">
+  First name: <input type="text" name="firstName"><br><br>
+  Last name: <input type="text" name="lastName"><br><br>
+  Birth date (mm/dd/yyyy): <input type="text" name="birthDay" placeholder="03/25/1990"><br><br>
+  Sex:
+  <input type="radio" name="sex" value="Male"> Male
+  <input type="radio" name="sex" value="Female"> Female<br><br>
+  <input type="submit" value="Send">
+</form>
+<!-- the servlet is also reachable at Form_Servlet: try action="Form_Servlet" -->
+<p><a href="ReadCookie">Read the cookies (ReadCookie servlet)</a></p>
+</body></html>

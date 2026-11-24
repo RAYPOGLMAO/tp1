@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      // 1) Lancer la tache "tomcat: start in DEBUG (port 8000)"  2) F5 sur cette config
+      "type": "java",
+      "name": "Attach to Tomcat (8000)",
+      "request": "attach",
+      "hostName": "localhost",
+      "port": 8000
+    }
+  ]
+}

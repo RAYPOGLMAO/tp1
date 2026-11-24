@@ -1,0 +1,7 @@
+{
+  // A adapter : chemin de votre JDK 17+ (decommentez et corrigez)
+  // "java.jdt.ls.java.home": "C:\\Program Files\\Java\\jdk-17",
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.compile.nullAnalysis.mode": "disabled",
+  "files.exclude": { "**/target": false }
+}

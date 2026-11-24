@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><title>MVC form</title></head>
+<body>
+<h1>MVC: person form (View) -> Controller (TP 3)</h1>
+<form method="post" action="Controller">
+  First name: <input type="text" name="firstName"><br><br>
+  Last name: <input type="text" name="lastName"><br><br>
+  Birth date (mm/dd/yyyy): <input type="text" name="birthDay" placeholder="03/25/1985"><br><br>
+  Sex:
+  <input type="radio" name="sex" value="Male"> Male
+  <input type="radio" name="sex" value="Female"> Female<br><br>
+  <input type="submit" value="Send">
+</form>
+<p>Born before 1990 -> old.jsp, otherwise -> young.jsp</p>
+</body></html>
